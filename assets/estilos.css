@@ -1,0 +1,286 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+/* Estilos por etiquetas */
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(216, 117, 117);
+}
+
+header {
+    background-color: rgb(226, 35, 35);
+    border-bottom: solid 2px;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+/* Estilos por clases*/
+
+.segmentos {
+    border: solid 2px;
+    background-color: rgb(85, 124, 240);
+    padding: 5px;
+}
+
+.fuente {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.margenElementosForm {
+	margin: 7px
+}
+
+.contactosyNosotros {
+    margin: 4px;
+    padding: 4px;
+}
+
+.subtitulo {
+    margin: 7px;
+}
+
+.listaUno {
+    text-align: right;  
+}
+
+.itemsListaUno {
+    display: inline-block;
+    border: solid 2px;
+    margin: 2px;
+    padding: 5px;
+    background-color: rgb(85, 124, 240);
+}
+
+.listaDos {
+    border: solid 2px;
+    margin: 2px;
+    padding: 5px;
+    background-color: rgb(85, 124, 240);
+}
+
+.itemsListaDos{
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.subItemsListaDos {
+    margin: 2px;
+    padding: 5px;
+}
+
+nav#navDos {
+    border: solid 2px;
+    background-color: rgb(226, 35, 35);
+}
+
+/* Grid */
+
+/* Grid para Index */
+
+header {
+    grid-area: cabeza;
+}
+
+section#equipos {
+    grid-area: equipos;
+}
+
+section#materiales {
+    grid-area: materiales;
+}
+
+section#contactoIndex {
+    grid-area: contacto;
+}
+
+section#nosotrosIdex {
+    grid-area: nosotros;
+}
+
+#grillaIndex {
+    display: grid;
+    grid-template-areas: 
+    "cabeza"
+    "equipos"
+    "materiales"
+    "contacto"
+    "nosotros";
+    grid-template-rows: 1fr 4fr 4fr 3fr 1fr;
+    grid-row-gap: 10px;
+}
+
+/* Grid sección materiales */
+
+nav#navDos {
+    grid-area: navlateral;
+}
+
+h2 {
+    grid-area: subtitulo;
+}
+
+section#bureta {
+    grid-area: uno;
+}
+
+section#embudoBuchner {
+    grid-area: dos;
+}
+
+section#embudoDecantacion {
+    grid-area: tres;
+}
+
+
+section#erlenmeyer {
+    grid-area: cuatro;
+}
+
+section#tubosRefrigerantes {
+    grid-area: cinco;
+}
+
+#grillaMateriales {
+    display: grid;
+    grid-template-areas:
+    "cabeza cabeza"
+    "subtitulo subtitulo"
+    "navlateral uno"
+    "navlateral dos"
+    "navlateral tres"
+    "navlateral cuatro"
+    "navlateral cinco";
+    grid-template-columns: 1fr 8fr;
+    grid-row-gap: 10px;
+    grid-column-gap: 5px;
+}
+
+/* Grid para equipos */
+
+
+section#autoclave {
+    grid-area: uno;
+}
+
+section#balanzaAnalitica {
+    grid-area: dos;
+}
+
+section#balanzaGranataria {
+    grid-area: tres;
+}
+
+
+section#centrifugadora {
+    grid-area: cuatro;
+}
+
+section#estufaCultivo {
+    grid-area: cinco;
+}
+
+#grillaEquipos {
+    display: grid;
+    grid-template-areas:
+    "cabeza cabeza"
+    "subtitulo subtitulo"
+    "navlateral uno"
+    "navlateral dos"
+    "navlateral tres"
+    "navlateral cuatro"
+    "navlateral cinco";
+    grid-template-columns: 1fr 8fr;
+    grid-row-gap: 10px;
+    grid-column-gap: 5px;
+}
+
+/* Grid contacto y nosotros */
+
+section#ayuda {
+    grid-area: ayuda;
+}
+
+section#form {
+    grid-area: form;
+}
+
+section#nosotrosDos {
+    grid-area: nosotrosDos;
+}
+
+#grillaAyuda {
+    display: grid;
+    grid-template-areas:
+    "cabeza"
+    "ayuda"
+    "form"
+    "nosotrosDos";
+    grid-template-rows: 1fr 1.5fr 2fr 2fr;
+    grid-row-gap: 10px;
+}
+
+/* Flexbox */
+
+/* Flexbox para encabezado */
+
+header {
+	display: flex;
+	flex-direction: row;
+    justify-content: center;
+}
+
+h1 {
+    flex-grow: 1;
+    text-align: center;
+    padding-top: 5px;
+    flex-shrink: 1;
+}
+
+nav#navUno {
+    flex-grow: 1;
+    margin: 10px 0px;
+    flex-shrink: 2;
+}
+
+ul {
+    text-align: center;
+}
+
+/* Flexbox para form */
+
+form {
+	display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+label {
+	display: block;
+	margin: 7px
+}
+
+textarea {
+    display: block;
+}
+
+/* Flexbox para sections */
+
+.materialesyEquipos {
+    display: flex;
+    flex-direction: row;
+}
+
+.divMaterialesyEquipos {
+    flex-grow: 3;
+}
+
+img {
+    flex-grow: 1;
+    width: 25%;
+}
