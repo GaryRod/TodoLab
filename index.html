@@ -10,21 +10,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 </head>
 <body id="grillaIndex">
-	<header> 
+	<header>
 		<h1>Todo Lab.</h1>
 	    <nav id="navUno">
 		    <ul class="listaUno">
-			    <li class="itemsListaUno"><a href="index.html">Inicio</a></li>
-			    <li class="itemsListaUno"><a href="#equipos">Equipos de laboratorio</a> </li>
-                <li class="itemsListaUno"><a href="#materiales">Materiales de laboratrio</a></li>
-                <li class="itemsListaUno"><a href="#contacto">Contacto</a></li>
-                <li class="itemsListaUno"><a href="#nosotros">Nosotros</a></li>
+			    <li class="itemsListaUno"><a href="index.html" class="enlacesLista">Inicio</a></li>
+			    <li class="itemsListaUno"><a href="views/equipos-de-lab.html" class="enlacesLista">Equipos de laboratorio</a> </li>
+                <li class="itemsListaUno"><a href="views/materiales-de-lab.html" class="enlacesLista">Materiales de laboratrio</a></li>
+                <li class="itemsListaUno"><a href="#contacto" class="enlacesLista">Contacto</a></li>
+                <li class="itemsListaUno"><a href="#nosotros" class="enlacesLista">Nosotros</a></li>
 		    </ul>
 	    </nav>
 	</header>
 	<section id="equipos" class="segmentos">
 		<article>
-			<h2 id="Equipos"><a href="views/equipos-de-lab.html">Equipos de laboratorio</a></h2>
+			<h2 id="Equipos"><a href="views/equipos-de-lab.html" class="enlacesBody">Equipos de laboratorio</a></h2>
 			<p class="fuente">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -35,7 +35,7 @@
 	</section>
 	<section id="materiales" class="segmentos">
 		<article>
-			<h2 id="materiales"><a href="views/materiales-de-lab.html">Materiales de laboratorio</a></h2>
+			<h2 id="materiales"><a href="views/materiales-de-lab.html" class="enlacesBody">Materiales de laboratorio</a></h2>
 			<p class="fuente">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -45,10 +45,10 @@
 		</article>
 	</section>
 	<section id="contactoIndex" class="segmentos">
-		<div>
-			<h2 id="contacto">Contacto</h2>
-		    <form>
-				<div class="divUno"><label>Nombre y Apellido:<input type="text" name="nombreyapellido"></label>
+	    <h2 id="contacto">Contacto</h2>
+		    <form class="formulario">
+				<div class="divUno">
+				    <label>Nombre y Apellido:<input type="text" name="nombreyapellido"></label>
 					<label>Email:<input type="Email" name="Email"></label>
 					<label>Soy:<select name="Ocupacion"></label>
 						  <option value="Estudiante secundario">Estudiante secundario</option>
@@ -57,19 +57,18 @@
 						  <option value="Profesor secundario">Profesor secundario</option>
 						  <option value="Profesor universitario">Profesor universitario</option>
 						  <option value="Otro">Otro</option></select>
-				    <textarea rows="6" cols="25" class="margenBotones">Dejanos tu mensaje</textarea>
+					<label>Especifica si elegiste "Otro":<input type="text" name="otro"></label>
+					<label>Te gustaria sumarte a nuestro grupo de Whatsapp: <input type="checkbox" value="Si"></label>
+					<label>Número de Whatsapp:<input type="text" name="Numero"></label>
 				</div>
 				<div>
-				     <label>Especifica si elegiste "Otro":<input type="text" name="otro"></label>
-					 <label>Te gustaria sumarte a nuestro grupo de Whatsapp: <input type="checkbox" value="Si"></label>
-					 <label>Número de Whatsapp:<input type="text" name="Numero"></label>
-					 <div class="margenBotones">
+				    <textarea class="margenElementosForm">Dejanos tu mensaje</textarea>
+					<div class="margenElementosForm">
 						 <input type="submit" value="Enviar formulario">
 					     <input type="reset" value="Reiniciar formulario">
-					 </div>
+					</div>
 				</div>
  	        </form>
-		</div>
 	</section>
 	<section id="nosotrosIndex" class="segmentos"> 
 		<article>

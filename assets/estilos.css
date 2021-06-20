@@ -20,20 +20,21 @@ h1 {
     font-size: 40px;
 }
 
+nav#navDos {
+    border: solid 2px;
+    background-color: rgb(226, 35, 35);
+}
+
 /* Estilos por clases*/
 
 .segmentos {
     border: solid 2px;
-    background-color: rgb(85, 124, 240);
+    background-image: radial-gradient(circle at 50% -20.71%, #97bdff 0, #3c78f2 50%, #003886 100%);
     padding: 5px;
 }
 
 .fuente {
 	font-family: 'Open Sans', sans-serif;
-}
-
-.margenElementosForm {
-	margin: 7px
 }
 
 .contactosyNosotros {
@@ -53,8 +54,7 @@ h1 {
     display: inline-block;
     border: solid 2px;
     margin: 2px;
-    padding: 5px;
-    background-color: rgb(85, 124, 240);
+    background-color: #3c78f2;
 }
 
 .listaDos {
@@ -74,9 +74,45 @@ h1 {
     padding: 5px;
 }
 
-nav#navDos {
-    border: solid 2px;
+.enlacesLista:link, .enlacesLista:visited {
+    background-color:#3c78f2;
+    color: black;
+    padding: 4px 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+  
+.enlacesLista:hover, .enlacesLista:active {
     background-color: rgb(226, 35, 35);
+}
+  
+.enlacesBody:link {
+    text-decoration: none;
+    color: black
+}
+  
+.enlacesBody:visited {
+    text-decoration: none;
+    color: black;
+}
+  
+.enlacesBody:hover {
+    text-decoration: underline;
+}
+
+.enlacesBody:active {
+    text-decoration: underline;
+}
+
+.formulario {
+    background-color: rgb(226, 35, 35);
+    width: 80%;
+    border: 2px solid;
+}
+
+.margenElementosForm {
+	margin: 7px
 }
 
 /* Grid */
@@ -137,7 +173,6 @@ section#embudoDecantacion {
     grid-area: tres;
 }
 
-
 section#erlenmeyer {
     grid-area: cuatro;
 }
@@ -161,8 +196,7 @@ section#tubosRefrigerantes {
     grid-column-gap: 5px;
 }
 
-/* Grid para equipos */
-
+/* Grid sección equipos */
 
 section#autoclave {
     grid-area: uno;
@@ -175,7 +209,6 @@ section#balanzaAnalitica {
 section#balanzaGranataria {
     grid-area: tres;
 }
-
 
 section#centrifugadora {
     grid-area: cuatro;
@@ -200,7 +233,7 @@ section#estufaCultivo {
     grid-column-gap: 5px;
 }
 
-/* Grid contacto y nosotros */
+/* Grid sección contacto y nosotros */
 
 section#ayuda {
     grid-area: ayuda;
@@ -230,26 +263,7 @@ section#nosotrosDos {
 /* Flexbox para encabezado */
 
 header {
-	display: flex;
-	flex-direction: row;
-    justify-content: center;
-}
-
-h1 {
-    flex-grow: 1;
-    text-align: center;
-    padding-top: 5px;
-    flex-shrink: 1;
-}
-
-nav#navUno {
-    flex-grow: 1;
-    margin: 10px 0px;
-    flex-shrink: 2;
-}
-
-ul {
-    text-align: center;
+    grid-area: cabeza;
 }
 
 /* Flexbox para form */
@@ -262,14 +276,31 @@ form {
 
 label {
 	display: block;
-	margin: 7px
+	padding: 5px
+}
+
+.divUno {
+    margin: 7px;  
 }
 
 textarea {
     display: block;
+    width: 90%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
 }
 
-/* Flexbox para sections */
+form div div input {
+    margin: 4px
+}
+
+/* Flexbox para seccciones */
 
 .materialesyEquipos {
     display: flex;
@@ -278,6 +309,7 @@ textarea {
 
 .divMaterialesyEquipos {
     flex-grow: 3;
+    width: 60%
 }
 
 img {
