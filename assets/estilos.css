@@ -336,11 +336,12 @@ img {
 }
 
 form {
-    transform: translate(85px, 0px);
+    width: 60%;
 }
 
-@media screen and (min-width: 720px) {
+@media screen and (max-width: 720px) {
     form {
-        transform: translate(45px, 0px);
+        transform: translate(20px, 0px);
+        flex-direction: column;
     }
 }
