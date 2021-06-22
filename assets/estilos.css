@@ -4,6 +4,7 @@
 }
 
 /* Estilos por etiquetas */
+/* Estilos generales */
 
 body {
     width: 100vw;
@@ -18,11 +19,91 @@ header {
 
 h1 {
     font-size: 40px;
+    text-align: center;
+    padding-top: 5px;
+}
+
+ul.listaUno {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+  
+ul.listaUno li {
+    float: left;
+}
+  
+ul.listaUno li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+  
+ul.listaUno li a:hover:not(.active) {
+    background-image: radial-gradient(circle at 50% -20.71%, #97bdff 0, #3c78f2 50%, #003886 100%);
+}
+  
+ul.listaUno li a.active {
+    background-color: red;
+}
+  
+ul.listaUno li.right {
+    float: right;
 }
 
 nav#navDos {
     border: solid 2px;
     background-color: rgb(226, 35, 35);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilos para form */
+
+form {
+    width: 60%;
+    transform: translate(12%,0px);
+    background-color: rgb(226, 35, 35);
+    width: 80%;
+    border: 2px solid;
+}
+
+form div div input {
+    margin: 4px
+}
+
+label {
+    display: block;
+	padding: 5px
+}
+
+input[type=text], input[type=Email], select {
+    width: 50%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea {
+    display: block;
+    width: 90%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+    margin: 6px;
 }
 
 /* Estilos por clases*/
@@ -42,21 +123,6 @@ nav#navDos {
     padding: 4px;
 }
 
-.subtitulo {
-    margin: 7px;
-}
-
-.listaUno {
-    text-align: right;  
-}
-
-.itemsListaUno {
-    display: inline-block;
-    border: solid 2px;
-    margin: 2px;
-    background-color: #3c78f2;
-}
-
 .listaDos {
     border: solid 2px;
     margin: 2px;
@@ -74,19 +140,10 @@ nav#navDos {
     padding: 5px;
 }
 
-.enlacesLista:link, .enlacesLista:visited {
-    background-color:#3c78f2;
-    color: black;
-    padding: 4px 4px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
+.divUno, .subtitulo {
+	margin: 7px
 }
-  
-.enlacesLista:hover, .enlacesLista:active {
-    background-color: rgb(226, 35, 35);
-}
-  
+
 .enlacesBody:link {
     text-decoration: none;
     color: black
@@ -103,16 +160,6 @@ nav#navDos {
 
 .enlacesBody:active {
     text-decoration: underline;
-}
-
-.formulario {
-    background-color: rgb(226, 35, 35);
-    width: 80%;
-    border: 2px solid;
-}
-
-.margenElementosForm {
-	margin: 7px
 }
 
 /* Grid */
@@ -135,7 +182,7 @@ section#contactoIndex {
     grid-area: contacto;
 }
 
-section#nosotrosIdex {
+section#nosotrosIndex {
     grid-area: nosotros;
 }
 
@@ -221,16 +268,15 @@ section#estufaCultivo {
 #grillaEquipos {
     display: grid;
     grid-template-areas:
-    "cabeza cabeza"
-    "subtitulo subtitulo"
-    "navlateral uno"
-    "navlateral dos"
-    "navlateral tres"
-    "navlateral cuatro"
-    "navlateral cinco";
-    grid-template-columns: 1fr 8fr;
-    grid-row-gap: 10px;
-    grid-column-gap: 5px;
+    "cabeza"
+    "subtitulo"
+    "uno"
+    "dos"
+    "tres"
+    "cuatro"
+    "cinco";
+    grid-template-rows: 1fr 1fr 2fr 2fr 2fr 2fr 2fr;
+    grid-row-gap: 10px
 }
 
 /* Grid sección contacto y nosotros */
@@ -260,30 +306,6 @@ section#nosotrosDos {
 
 /* Flexbox */
 
-/* Flexbox para encabezado */
-
-header {
-	display: flex;
-	flex-direction: row;
-    justify-content: center;
-}
-
-h1 {
-    flex-grow: 1;
-    text-align: center;
-    padding-top: 5px;
-    flex-shrink: 1;
-}
-
-nav#navUno {
-    flex-grow: 1;
-    margin: 10px 0px;
-    flex-shrink: 2;
-}
-
-ul {
-    text-align: center;
-}
 /* Flexbox para form */
 
 form {
@@ -292,56 +314,24 @@ form {
     justify-content: space-evenly;
 }
 
-label {
-	display: block;
-	padding: 5px
-}
-
-.divUno {
-    margin: 7px;  
-}
-
-textarea {
-    display: block;
-    width: 90%;
-    height: 150px;
-    padding: 12px 20px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    background-color: #f8f8f8;
-    font-size: 16px;
-    resize: none;
-}
-
-form div div input {
-    margin: 4px
-}
 
 /* Flexbox para seccciones */
-
-.materialesyEquipos {
-    display: flex;
-    flex-direction: row;
-}
-
-.divMaterialesyEquipos {
-    flex-grow: 3;
-    width: 60%
-}
-
-img {
-    flex-grow: 1;
-    width: 25%;
-}
-
-form {
-    width: 60%;
-}
-
+  
 @media screen and (max-width: 720px) {
+    ul.listaUno li.right, ul.listaUno li {
+        float: none;
+    }
+
     form {
-        transform: translate(20px, 0px);
         flex-direction: column;
+        align-items: center;
+    }
+
+    input[type=text], input[type=Email], select {
+        width: 40%;
+    }
+
+    textarea {
+        width: 80%;
     }
 }
