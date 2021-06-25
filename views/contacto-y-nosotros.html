@@ -10,22 +10,41 @@
 </head>
 <body id="grillaAyuda">
 	<header>
-		<h1>Todo Lab.</h1>
-	    <nav id="navUno">
-			<ul class="listaUno">
+		<div class="divHeader">
+			    <div class="btn-menu">
+				    <label for="btn-menu">☰</label>
+			    </div>
+		    <h1>Todo Lab.</h1>
+	    </div>	  
+		<nav id="navUno">
+		    <ul class="listaUno">
 			    <li><a href="../index.html" class="enlacesLista">Inicio</a></li>
 			    <li><a href="equipos-de-lab.html" class="enlacesLista">Equipos de laboratorio</a></li>
                 <li><a href="materiales-de-lab.html" class="enlacesLista">Materiales de laboratrio</a></li>
                 <li><a href="contacto-y-nosotros.html" class="enlacesLista">Contacto y Nosotros</a></li>
-		    </ul>
+			</ul>
 	    </nav>
 	</header>
+	    <input type="checkbox" id="btn-menu">
+	    <div class="container-menu">
+		    <div class="cont-menu">
+			    <nav>
+				    <a href="#">Bureta</a>
+				    <a href="#">Embudo buchner</a>
+				    <a href="#">Suscribirse</a>
+				    <a href="#">Facebook</a>
+				    <a href="#">Youtube</a>
+				    <a href="#">Instagram</a>
+			    </nav>
+			    <label for="btn-menu">✖️</label>
+		    </div>
+	    </div>
 	<section id="ayuda" class="contactosyNosotros">
 		<h2>¡Sumate si te interesa ayudarnos!</h2>
         <p class="fuente">Si crees que puedes ayudarnos aportando ideas o viendo errores dentro de la información contactanos. Muchas gracias.</p>
     </section>
 	<section id="form" class="segmentos">
-        <form class="formulario">
+        <form>
 				<div class="divUno">
 				    <label>Nombre y Apellido:<input type="text" name="nombreyapellido"></label>
 					<label>Email:<input type="Email" name="Email"></label>

@@ -10,32 +10,39 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: rgb(216, 117, 117);
+    margin-top: 5%;
 }
 
 header {
     background-color: rgb(226, 35, 35);
     border-bottom: solid 2px;
+    width: 100%;
+    position: fixed;
+    top: 0;
 }
 
 h1 {
     font-size: 40px;
-    text-align: center;
-    padding-top: 5px;
 }
 
-ul.listaUno {
+header nav {
+    margin: 4px;
+    height: 60%
+}
+
+ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     overflow: hidden;
     background-color: #333;
 }
   
-ul.listaUno li {
+ul li {
     float: left;
 }
   
-ul.listaUno li a {
+ul li a {
     display: block;
     color: white;
     text-align: center;
@@ -43,21 +50,16 @@ ul.listaUno li a {
     text-decoration: none;
 }
   
-ul.listaUno li a:hover:not(.active) {
+ul li a:hover:not(.active) {
     background-image: radial-gradient(circle at 50% -20.71%, #97bdff 0, #3c78f2 50%, #003886 100%);
 }
   
-ul.listaUno li a.active {
+ul li a.active {
     background-color: red;
 }
-  
-ul.listaUno li.right {
-    float: right;
-}
 
-nav#navDos {
-    border: solid 2px;
-    background-color: rgb(226, 35, 35);
+ul li.right {
+    float: right;
 }
 
 img {
@@ -65,14 +67,18 @@ img {
     height: auto;
 }
 
-/* Estilos para form */
+#grillaAyuda {
+    margin-top: 1%
+}
+
+/* Estilosu para form */
 
 form {
     width: 60%;
-    transform: translate(12%,0px);
     background-color: rgb(226, 35, 35);
     width: 80%;
     border: 2px solid;
+    margin-left: 9%
 }
 
 form div div input {
@@ -123,23 +129,6 @@ textarea {
     padding: 4px;
 }
 
-.listaDos {
-    border: solid 2px;
-    margin: 2px;
-    padding: 5px;
-    background-color: rgb(85, 124, 240);
-}
-
-.itemsListaDos{
-    text-decoration: underline;
-    font-weight: bold;
-}
-
-.subItemsListaDos {
-    margin: 2px;
-    padding: 5px;
-}
-
 .divUno, .subtitulo {
 	margin: 7px
 }
@@ -160,6 +149,83 @@ textarea {
 
 .enlacesBody:active {
     text-decoration: underline;
+}
+
+/*Estilos para el encabezado*/
+
+.divHeader {
+    text-align: center;
+    padding-top: 5px;
+}
+
+.divHeader .btn-menu{
+	float: left;
+}
+
+.divHeader .btn-menu label{
+	color: #fff;
+	font-size: 25px;
+	cursor: pointer;
+}
+
+/*Menù lateral*/
+
+#btn-menu{
+	display: none;
+}
+.container-menu{
+	position: fixed;
+	background: rgba(0,0,0,0.5);
+	width: 100%;
+	height: 100vh;
+	top: 0;left: 0;
+	transition: all 500ms ease;
+	opacity: 0;
+	visibility: hidden;
+}
+#btn-menu:checked ~ .container-menu{
+	opacity: 1;
+	visibility: visible;
+}
+.cont-menu{
+	width: 100%;
+	max-width: 250px;
+	background: #1c1c1c;
+	height: 100vh;
+	position: relative;
+	transition: all 500ms ease;
+	transform: translateX(-100%);
+}
+
+#btn-menu:checked ~ .container-menu .cont-menu{
+	transform: translateX(0%);
+}
+
+.cont-menu nav{
+	transform: translateY(15%);
+}
+
+.cont-menu nav a{
+	display: block;
+	text-decoration: none;
+	padding: 20px;
+	color: #c7c7c7;
+	border-left: 5px solid transparent;
+	transition: all 400ms ease;
+}
+
+.cont-menu nav a:hover{
+	border-left: 5px solid #c7c7c7;
+	background: #1f1f1f;
+}
+
+.cont-menu label{
+	position: absolute;
+	right: 5px;
+	top: 10px;
+	color: #fff;
+	cursor: pointer;
+	font-size: 18px;
 }
 
 /* Grid */
@@ -200,10 +266,6 @@ section#nosotrosIndex {
 
 /* Grid sección materiales */
 
-nav#navDos {
-    grid-area: navlateral;
-}
-
 h2 {
     grid-area: subtitulo;
 }
@@ -231,16 +293,15 @@ section#tubosRefrigerantes {
 #grillaMateriales {
     display: grid;
     grid-template-areas:
-    "cabeza cabeza"
-    "subtitulo subtitulo"
-    "navlateral uno"
-    "navlateral dos"
-    "navlateral tres"
-    "navlateral cuatro"
-    "navlateral cinco";
-    grid-template-columns: 1fr 8fr;
-    grid-row-gap: 10px;
-    grid-column-gap: 5px;
+    "cabeza"
+    "subtitulo"
+    "uno"
+    "dos"
+    "tres"
+    "cuatro"
+    "cinco";
+    grid-template-rows: 1fr 1fr 2fr 2fr 2fr 2fr 2fr;
+    grid-row-gap: 10px
 }
 
 /* Grid sección equipos */
@@ -305,6 +366,25 @@ section#nosotrosDos {
 }
 
 /* Flexbox */
+/* Flexbox para encabezado */
+
+header {
+    display: flex;
+	flex-direction: row;
+	justify-content: space-evenly
+}
+
+h1 {
+    flex: 1 0 10%
+}
+
+nav {
+    flex: 0 0 70%;
+}
+
+.divHeader {
+    display: flex;
+}
 
 /* Flexbox para form */
 
@@ -314,10 +394,9 @@ form {
     justify-content: space-evenly;
 }
 
-
 /* Flexbox para seccciones */
   
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 480px) {
     ul.listaUno li.right, ul.listaUno li {
         float: none;
     }
@@ -333,5 +412,39 @@ form {
 
     textarea {
         width: 80%;
+    }
+
+    body {
+        margin-top: 13%;
+    }
+
+    header {
+        flex-direction: column;
+        position: static;
+    }
+    h1 {
+        flex-grow: 1;
+        flex-basis: 20%;
+    }
+    
+    nav {
+        flex-grow: 1;
+        flex-basis: 50%;
+    }
+
+    #grillaAyuda {
+        margin-top: 13%;
+    }
+    
+    nav {
+        margin: auto;
+    }
+
+    .divHeader {
+        background-color: rgb(226, 35, 35);
+        border-bottom: solid 2px;
+        width: 100%;
+        position: fixed;
+        top: 0;
     }
 }
