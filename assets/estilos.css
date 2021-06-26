@@ -449,7 +449,18 @@ form {
         top: 0;
     }
 
-    #grillaMateriales section {
-        overflow: scroll;
+    #grillaMateriales {
+        grid-template-areas:
+        "cabeza"
+        "subtitulo"
+        "uno"
+        "dos"
+        "tres"
+        "cuatro"
+        "cinco";
+        grid-auto-rows: 1fr 1fr 2fr 2fr 2fr 2fr 2fr;
+    }
+    .segmentos {
+        width: 100vw;
     }
 }
