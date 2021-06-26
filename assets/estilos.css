@@ -449,7 +449,7 @@ form {
         top: 0;
     }
 
-    .segmentos {
+    #grillaMateriales section {
         overflow: scroll;
     }
 }
