@@ -27,7 +27,6 @@ h1 {
 
 header nav {
     margin: 4px;
-    height: 60%
 }
 
 ul {
@@ -293,15 +292,15 @@ section#tubosRefrigerantes {
 #grillaMateriales {
     display: grid;
     grid-template-areas:
-    "cabeza"
-    "subtitulo"
-    "uno"
-    "dos"
-    "tres"
-    "cuatro"
-    "cinco";
-    grid-template-rows: 1fr 1fr 2fr 2fr 2fr 2fr 2fr;
-    grid-row-gap: 10px
+    "cabeza cabeza"
+    "subtitulo subtitulo"
+    "uno dos"
+    "tres cuatro"
+    "cinco none";
+    grid-template-rows: 1fr 1fr 2fr 2fr 2fr 2fr;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
 }
 
 /* Grid sección equipos */
@@ -371,19 +370,21 @@ section#nosotrosDos {
 header {
     display: flex;
 	flex-direction: row;
-	justify-content: space-evenly
+	justify-content: space-between;
 }
 
 h1 {
-    flex: 1 0 10%
+    flex: 1 0 20%
 }
 
 nav {
-    flex: 0 0 70%;
+    flex: 0 0 600px;
+    margin: 1%
 }
 
 .divHeader {
     display: flex;
+    justify-content: space-between;
 }
 
 /* Flexbox para form */
@@ -446,5 +447,9 @@ form {
         width: 100%;
         position: fixed;
         top: 0;
+    }
+
+    .segmentos {
+        overflow: scroll;
     }
 }
