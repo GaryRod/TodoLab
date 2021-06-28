@@ -9,8 +9,7 @@
 body {
     width: 100vw;
     height: 100vh;
-    background-color: rgb(216, 117, 117);
-    margin-top: 5%;
+    background-color: rgb(224, 96, 96);
 }
 
 header {
@@ -29,19 +28,21 @@ header nav {
     margin: 4px;
 }
 
-ul {
+/* Estilos para lista */
+
+header nav ul {
     list-style-type: none;
     margin: 0px;
     padding: 0px;
     overflow: hidden;
-    background-color: #333;
+    background-color: #1c1c1c;
 }
   
-ul li {
+header nav ul li {
     float: left;
 }
   
-ul li a {
+header nav ul li a {
     display: block;
     color: white;
     text-align: center;
@@ -49,28 +50,11 @@ ul li a {
     text-decoration: none;
 }
   
-ul li a:hover:not(.active) {
+header nav ul li a:hover:not(.active) {
     background-image: radial-gradient(circle at 50% -20.71%, #97bdff 0, #3c78f2 50%, #003886 100%);
 }
-  
-ul li a.active {
-    background-color: red;
-}
 
-ul li.right {
-    float: right;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-#grillaAyuda {
-    margin-top: 1%
-}
-
-/* Estilosu para form */
+/* Estilos para form */
 
 form {
     width: 60%;
@@ -86,11 +70,10 @@ form div div input {
 
 label {
     display: block;
-	padding: 5px
+	padding: 5px;
 }
 
 input[type=text], input[type=Email], select {
-    width: 50%;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -132,6 +115,8 @@ textarea {
 	margin: 7px
 }
 
+/* Estilos para links */
+
 .enlacesBody:link {
     text-decoration: none;
     color: black
@@ -154,7 +139,6 @@ textarea {
 
 .divHeader {
     text-align: center;
-    padding-top: 5px;
 }
 
 .divHeader .btn-menu{
@@ -167,11 +151,12 @@ textarea {
 	cursor: pointer;
 }
 
-/*Menù lateral*/
+/*Menù desplegable*/
 
 #btn-menu{
 	display: none;
 }
+
 .container-menu{
 	position: fixed;
 	background: rgba(0,0,0,0.5);
@@ -202,23 +187,28 @@ textarea {
 }
 
 .cont-menu nav{
-	transform: translateY(5%);
+	transform: translateY(20px);
 }
 
 .cont-menu nav ul li {
     width: 100%;
-    background-color: #1c1c1c;
+    list-style: none;
 }
 
+.cont-menu nav ul li ul li a {
+    display: block;
+    text-decoration: none;
+    color: #c7c7c7;
+    padding: 16px 16px;
+    text-align: center;
+}
+
+.cont-menu nav ul li ul li a:hover:not(.active) {
+    background-image: radial-gradient(circle at 50% -20.71%, #97bdff 0, #3c78f2 50%, #003886 100%);
+}
 .cont-menu nav {
     color: #c7c7c7;
-	text-decoration: none;
-	padding: 5px;
 	transition: all 400ms ease;
-}
-
-.cont-menu nav a:hover{
-	background: #1f1f1f;
 }
 
 .cont-menu label{
@@ -309,37 +299,37 @@ section#tubosRefrigerantes {
 /* Grid sección equipos */
 
 section#autoclave {
-    grid-area: uno;
+    grid-area: autoclave;
 }
 
 section#balanzaAnalitica {
-    grid-area: dos;
+    grid-area: balanzaAn;
 }
 
 section#balanzaGranataria {
-    grid-area: tres;
+    grid-area: balanzaGra;
 }
 
 section#centrifugadora {
-    grid-area: cuatro;
+    grid-area: centrifugadora;
 }
 
 section#estufaCultivo {
-    grid-area: cinco;
+    grid-area: estufaCult;
 }
 
 #grillaEquipos {
     display: grid;
     grid-template-areas:
-    "cabeza"
-    "subtitulo"
-    "uno"
-    "dos"
-    "tres"
-    "cuatro"
-    "cinco";
-    grid-template-rows: 1fr 1fr 2fr 2fr 2fr 2fr 2fr;
-    grid-row-gap: 10px
+    "cabeza cabeza"
+    "subtitulo subtitulo"
+    "autoclave balanzaAn"
+    "balanzaGra centrifugadora"
+    "estufaCult none";
+    grid-template-rows: 1fr 1fr 2fr 2fr 2fr 2fr;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
 }
 
 /* Grid sección contacto y nosotros */
@@ -398,12 +388,45 @@ form {
     justify-content: space-evenly;
 }
 
-/* Flexbox para seccciones */
-  
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 830px) {
+    body {
+        margin-top: 50px;
+    }
+
+    header {
+        flex-direction: column;
+        position: static;
+        background-color: #333;
+    }
+
+    h1 {
+        flex-grow: 1;
+        flex-basis: 20%;
+    }
+    
+    nav {
+        flex-grow: 1;
+        flex-basis: 50%;
+    }
+
+    .divHeader {
+        background-color: rgb(226, 35, 35);
+        border-bottom: solid 2px;
+        width: 100%;
+        position: fixed;
+        top: 0;
+    }
+
     ul.listaUno li.right, ul.listaUno li {
         float: none;
     }
+    
+    #grillaAyuda {
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 480px) {
 
     form {
         flex-direction: column;
@@ -417,53 +440,33 @@ form {
     textarea {
         width: 80%;
     }
-
-    body {
-        margin-top: 13%;
-    }
-
-    header {
-        flex-direction: column;
-        position: static;
-    }
-    h1 {
-        flex-grow: 1;
-        flex-basis: 20%;
-    }
     
-    nav {
-        flex-grow: 1;
-        flex-basis: 50%;
-    }
-
-    #grillaAyuda {
-        margin-top: 13%;
-    }
-    
-    nav {
-        margin: auto;
-    }
-
-    .divHeader {
-        background-color: rgb(226, 35, 35);
-        border-bottom: solid 2px;
-        width: 100%;
-        position: fixed;
-        top: 0;
-    }
-
     #grillaMateriales {
         grid-template-areas:
         "cabeza"
         "subtitulo"
-        "uno"
-        "dos"
-        "tres"
-        "cuatro"
-        "cinco";
+        "bureta"
+        "embudoBu"
+        "embudoDe"
+        "erlenmeyer"
+        "tubosRefri";
         grid-auto-rows: 1fr 1fr 2fr 2fr 2fr 2fr 2fr;
     }
+
+    #grillaEquipos {
+        grid-template-areas:
+        "cabeza"
+        "subtitulo"
+        "autoclave"
+        "balanzaAn"
+        "balanzaGra"
+        "centrifugadora"
+        "estufaCult";
+        grid-auto-rows: 1fr 1fr 2fr 2fr 2fr 2fr 2fr;
+    }
+
     .segmentos {
         width: 100vw;
     }
 }
+
