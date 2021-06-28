@@ -29,19 +29,32 @@
 	    <input type="checkbox" id="btn-menu">
 	    <div class="container-menu">
 		    <div class="cont-menu">
-			    <nav>
-				    <a href="#">Bureta</a>
-				    <a href="#">Embudo buchner</a>
-				    <a href="#">Suscribirse</a>
-				    <a href="#">Facebook</a>
-				    <a href="#">Youtube</a>
-				    <a href="#">Instagram</a>
-			    </nav>
+				<nav>
+					<ul>
+						<li>Equipos
+							<ul>
+								<li><a href="views/autoclave.html">Autoclave</a></li>
+								<li><a href="views/">Balanza analitica</a></li>
+								<li><a href="views/">Balanza granataria</a></li>
+								<li><a href="views/">Centrifugadora</a></li>
+								<li><a href="views/">Estufa de cultivo</a></li>
+							</ul>
+						</li>
+						<li>Materiales
+							<ul>
+								<li><a href="views/">Bureta</a></li>
+								<li><a href="views/">Embudo buchner</a></li>
+								<li><a href="views/">Embudo decantacion</a></li>
+								<li><a href="views/">Erlenmeyer</a></li>
+								<li><a href="views/">Tubo refrigerante</a></li>
+							</ul>
+						</li>
+				  </ul>
+				</nav>
 			     <label for="btn-menu">✖️</label>
 		     </div>
 	    </div>
 	<section id="equipos" class="segmentos">
-		<article>
 			<h2><a href="views/equipos-de-lab.html" class="enlacesBody">Equipos de laboratorio</a></h2>
 			<p class="fuente">
 				Aquí podrás encontrar todos los equipos de laboratorio junto con sus usos y diferentes versiones, 
@@ -52,10 +65,8 @@
 			    que necesitan además de leer datos e interpretarlos saber posibles errores técnicos que puedan tener, ejemplo de esto
 			    es el HPLC.
 			</p>
-		</article>
 	</section>
 	<section id="materiales" class="segmentos">
-		<article>
 			<h2><a href="views/materiales-de-lab.html" class="enlacesBody">Materiales de laboratorio</a></h2>
 			<p class="fuente">
 				Aquí podrás encontrar todos los materiales de laboratorio junto con sus usos y diferentes versiones, 
@@ -63,14 +74,13 @@
 			    Esenciales en cualquier laboratorio poco a poco fueron reemplazados algunas de sus funciones en conjunto
 			    por equipos electrónicos aún así se usan como inicio de prácticas.
 		    </p>
-		</article>
 	</section>
 	<section id="contactoIndex" class="segmentos">
 	    <h2>Contacto</h2>
 		    <form>
 				<div class="divUno">
 				    <label>Nombre y Apellido:<input type="text" name="nombreyapellido"></label>
-					<label>Email:<input type="Email" name="Email"></label>
+					<label>Correo electrónico:<input type="Email" name="Email"></label>
 					<label>Soy:<select name="Ocupacion"></label>
 						  <option value="Estudiante secundario">Estudiante secundario</option>
 						  <option value="Estudiante universitario">Estudiante universitario</option>
@@ -82,7 +92,7 @@
 					<label>Te gustaria sumarte a nuestro grupo de Whatsapp: <input type="checkbox" value="Si"></label>
 					<label>Número de Whatsapp:<input type="text" name="Numero"></label>
 				</div>
-				<div class="divDos">
+				<div>
 				    <textarea>Dejanos tu mensaje</textarea>
 					<div>
 						 <input type="submit" value="Enviar formulario">
@@ -92,11 +102,9 @@
  	        </form>
 	</section>
 	<section id="nosotrosIndex" class="segmentos"> 
-		<article>
 			<h2>Nosotros</h2>
 			 <h3>Hola, conoce un poco de nosotros.</h3>
             <p class="fuente">La página se realiza a partir de un estudiante de química que busca ayudar a las personas que busquen sobre materiales de laboratorio y puedan encontrar toda esto en una sola página lo mas completa posible.</p>
-		</article>
 	</section>
 </body>
 </html>
