@@ -1,0 +1,472 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+/* Estilos por etiquetas */
+/* Estilos generales */
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(224, 96, 96);
+}
+
+header {
+    background-color: rgb(226, 35, 35);
+    border-bottom: solid 2px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+header nav {
+    margin: 4px;
+}
+
+/* Estilos para lista */
+
+header nav ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    background-color: #1c1c1c;
+}
+  
+header nav ul li {
+    float: left;
+}
+  
+header nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+  
+header nav ul li a:hover:not(.active) {
+    background-image: radial-gradient(circle at 50% -20.71%, #97bdff 0, #3c78f2 50%, #003886 100%);
+}
+
+/* Estilos para form */
+
+form {
+    width: 60%;
+    background-color: rgb(226, 35, 35);
+    width: 80%;
+    border: 2px solid;
+    margin-left: 9%
+}
+
+form div div input {
+    margin: 4px
+}
+
+label {
+    display: block;
+	padding: 5px;
+}
+
+input[type=text], input[type=Email], select {
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea {
+    display: block;
+    width: 90%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+    margin: 6px;
+}
+
+/* Estilos por clases*/
+
+.segmentos {
+    border: solid 2px;
+    background-image: radial-gradient(circle at 50% -20.71%, #97bdff 0, #3c78f2 50%, #003886 100%);
+    padding: 5px;
+}
+
+.fuente {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.contactosyNosotros {
+    margin: 4px;
+    padding: 4px;
+}
+
+.divUno, .subtitulo {
+	margin: 7px
+}
+
+/* Estilos para links */
+
+.enlacesBody:link {
+    text-decoration: none;
+    color: black
+}
+  
+.enlacesBody:visited {
+    text-decoration: none;
+    color: black;
+}
+  
+.enlacesBody:hover {
+    text-decoration: underline;
+}
+
+.enlacesBody:active {
+    text-decoration: underline;
+}
+
+/*Estilos para el encabezado*/
+
+.divHeader {
+    text-align: center;
+}
+
+.divHeader .btn-menu{
+	float: left;
+}
+
+.divHeader .btn-menu label{
+	color: #fff;
+	font-size: 25px;
+	cursor: pointer;
+}
+
+/*Menù desplegable*/
+
+#btn-menu{
+	display: none;
+}
+
+.container-menu{
+	position: fixed;
+	background: rgba(0,0,0,0.5);
+	width: 100%;
+	height: 100vh;
+	top: 0;left: 0;
+	transition: all 500ms ease;
+	opacity: 0;
+	visibility: hidden;
+}
+#btn-menu:checked ~ .container-menu{
+	opacity: 1;
+	visibility: visible;
+}
+.cont-menu{
+	width: 100%;
+	max-width: 250px;
+	background: #1c1c1c;
+	height: 100vh;
+	position: relative;
+	transition: all 500ms ease;
+	transform: translateX(-100%);
+    overflow: scroll;
+}
+
+#btn-menu:checked ~ .container-menu .cont-menu{
+	transform: translateX(0%);
+}
+
+.cont-menu nav{
+	transform: translateY(20px);
+}
+
+.cont-menu nav ul li {
+    width: 100%;
+    list-style: none;
+}
+
+.cont-menu nav ul li ul li a {
+    display: block;
+    text-decoration: none;
+    color: #c7c7c7;
+    padding: 16px 16px;
+    text-align: center;
+}
+
+.cont-menu nav ul li ul li a:hover:not(.active) {
+    background-image: radial-gradient(circle at 50% -20.71%, #97bdff 0, #3c78f2 50%, #003886 100%);
+}
+.cont-menu nav {
+    color: #c7c7c7;
+	transition: all 400ms ease;
+}
+
+.cont-menu label{
+	position: absolute;
+	right: 5px;
+	top: 10px;
+	color: #fff;
+	cursor: pointer;
+	font-size: 18px;
+}
+
+/* Grid */
+
+/* Grid para Index */
+
+header {
+    grid-area: cabeza;
+}
+
+section#equipos {
+    grid-area: equipos;
+}
+
+section#materiales {
+    grid-area: materiales;
+}
+
+section#contactoIndex {
+    grid-area: contacto;
+}
+
+section#nosotrosIndex {
+    grid-area: nosotros;
+}
+
+#grillaIndex {
+    display: grid;
+    grid-template-areas: 
+    "cabeza"
+    "equipos"
+    "materiales"
+    "contacto"
+    "nosotros";
+    grid-template-rows: 1fr 4fr 4fr 3fr 1fr;
+    grid-row-gap: 10px;
+}
+
+/* Grid sección materiales */
+
+h2 {
+    grid-area: subtitulo;
+}
+
+section#bureta {
+    grid-area: bureta;
+}
+
+section#embudoBuchner {
+    grid-area: embudoBu;
+}
+
+section#embudoDecantacion {
+    grid-area: embudoDe;
+}
+
+section#erlenmeyer {
+    grid-area: erlenmeyer;
+}
+
+section#tubosRefrigerantes {
+    grid-area: tubosRefri;
+}
+
+#grillaMateriales {
+    display: grid;
+    grid-template-areas:
+    "cabeza cabeza"
+    "subtitulo subtitulo"
+    "bureta embudoBu"
+    "embudoDe erlenmeyer"
+    "tubosRefri none";
+    grid-template-rows: 1fr 1fr 2fr 2fr 2fr 2fr;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+}
+
+/* Grid sección equipos */
+
+section#autoclave {
+    grid-area: autoclave;
+}
+
+section#balanzaAnalitica {
+    grid-area: balanzaAn;
+}
+
+section#balanzaGranataria {
+    grid-area: balanzaGra;
+}
+
+section#centrifugadora {
+    grid-area: centrifugadora;
+}
+
+section#estufaCultivo {
+    grid-area: estufaCult;
+}
+
+#grillaEquipos {
+    display: grid;
+    grid-template-areas:
+    "cabeza cabeza"
+    "subtitulo subtitulo"
+    "autoclave balanzaAn"
+    "balanzaGra centrifugadora"
+    "estufaCult none";
+    grid-template-rows: 1fr 1fr 2fr 2fr 2fr 2fr;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+}
+
+/* Grid sección contacto y nosotros */
+
+section#ayuda {
+    grid-area: ayuda;
+}
+
+section#form {
+    grid-area: form;
+}
+
+section#nosotrosDos {
+    grid-area: nosotrosDos;
+}
+
+#grillaAyuda {
+    display: grid;
+    grid-template-areas:
+    "cabeza"
+    "ayuda"
+    "form"
+    "nosotrosDos";
+    grid-template-rows: 1fr 1.5fr 2fr 2fr;
+    grid-row-gap: 10px;
+}
+
+/* Flexbox */
+/* Flexbox para encabezado */
+
+header {
+    display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+h1 {
+    flex: 1 0 20%
+}
+
+nav {
+    flex: 0 0 600px;
+    margin: 1%
+}
+
+.divHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Flexbox para form */
+
+form {
+	display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+@media screen and (max-width: 830px) {
+    body {
+        margin-top: 50px;
+    }
+
+    header {
+        flex-direction: column;
+        position: static;
+        background-color: #333;
+    }
+
+    h1 {
+        flex-grow: 1;
+        flex-basis: 20%;
+    }
+    
+    nav {
+        flex-grow: 1;
+        flex-basis: 50%;
+    }
+
+    .divHeader {
+        background-color: rgb(226, 35, 35);
+        border-bottom: solid 2px;
+        width: 100%;
+        position: fixed;
+        top: 0;
+    }
+
+    ul.listaUno li.right, ul.listaUno li {
+        float: none;
+    }
+    
+    #grillaAyuda {
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input[type=text], input[type=Email], select {
+        width: 40%;
+    }
+
+    textarea {
+        width: 80%;
+    }
+    
+    #grillaMateriales {
+        grid-template-areas:
+        "cabeza"
+        "subtitulo"
+        "bureta"
+        "embudoBu"
+        "embudoDe"
+        "erlenmeyer"
+        "tubosRefri";
+        grid-auto-rows: 1fr 1fr 2fr 2fr 2fr 2fr 2fr;
+    }
+
+    #grillaEquipos {
+        grid-template-areas:
+        "cabeza"
+        "subtitulo"
+        "autoclave"
+        "balanzaAn"
+        "balanzaGra"
+        "centrifugadora"
+        "estufaCult";
+        grid-auto-rows: 1fr 1fr 2fr 2fr 2fr 2fr 2fr;
+    }
+
+    .segmentos {
+        width: 100vw;
+    }
+}
+
